@@ -1,0 +1,90 @@
+<!DOCTYPE html>                                                                                    
+<html lang="en">                                                                                   
+<head>                                                              <!-- Holds page information that is not shown on screen -->
+  <meta charset="UTF-8">                                            <!-- Lets the browser display all characters correctly -->
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">                                    <!-- Makes the page fit phone and laptop screens -->
+  <title>AstraSync | Home</title>                                   <!-- Text shown on the browser tab -->
+  <link rel="stylesheet" href="style.css">                          <!-- Links the external stylesheet (style.css) -->
+</head>                                                                                            
+<body>                                                              <!-- Everything visible on the page goes inside body -->
+
+  <header>                                                          <!-- HEADER: top banner with logo, company name and tagline (same on every page) -->
+    <img src="images/astrasync-icon-large-transparent.png" alt="AstraSync logo" class="logo">               <!-- COMPANY LOGO. Put your logo file in the images folder. CLASS SELECTOR used here: .logo -->
+    <div>                                                           <!-- Groups the company name and tagline together -->
+      <h1 id="company-name" class="company-name">AstraSync</h1>     <!-- Company name in a heading tag. ID SELECTOR used here: #company-name. CLASS SELECTOR used here: .company-name -->
+      <p class="tagline">Sync that Styles, Live Smarter</p>         <!-- Company tagline. CLASS SELECTOR used here: .tagline -->
+    </div>                                                          <!-- End of the name and tagline group -->
+  </header>                                                                                        
+
+  <nav>                                                             
+    <a href="index.html" class="active">Home</a>                    <!-- Link to Home page; class "active" highlights the current page (ED)-->
+    <a href="aboutus.html">About Us</a>                             <!-- Link to About Us page   (ED)-->
+    <a href="products.html">Products</a>                            <!-- Link to Products page   (ED)-->
+    <a href="contactus.html">Contact Us</a>                         <!-- Link to Contact Us page (ED)-->
+  </nav>                                                                                           
+
+  <section class="hero">                                            <!-- HERO: full-width banner. It sits OUTSIDE main so it stretches across the whole page. CLASS SELECTOR used here: .hero -->
+    <h2>Seamlessly Smart, Effortlessly Wearable</h2>                <!-- Main welcome heading (ED) -->
+    <p>AstraSync is a smart wearable technology company creating premium rings, earbuds, watches, and bands. We blend advanced technology with refined design to keep users connected and informed.</p> <!-- Company intro (ED) -->
+    <p>Where elegant design meets intelligent insight. Discover wearable technology redefined.</p>          <!-- Introduction: second line of a short puller (ED) -->
+    <a href="products.html" class="hero-btn premium-cta">Explore Products</a>                               <!-- Button linking to the Products page. CLASS SELECTOR used here: .hero-btn -->
+  </section> 
+
+  <main>                                                            <!-- main unique content of the page (ED) -->
+
+    <div class="card-row">                                          <!-- row, places 3 cards side by side, similar layout to garmin. Class selector used -> .card-row (ED)-->
+
+      <section class="card">                                        <!-- Card 1. Class selector used -> .card (ED) -->
+        <h2>Why smart wearable IoT matters</h2>                     <!-- Heading for the left 1st card (ED) -->
+        <p>Wearable Internet of Things(IOT) devices connect to the internet and track your heart rate, sleep, and activity throughout the day.</p> <!-- Explains IoT simply -->
+        <p>Real-time data helps you understand habits, set goals, and make healthier decisions.</p>         <!-- Explains why the data is useful -->
+      </section> 
+
+      <section class="card">                                        <!-- Card 2. Class selector used -> .card (ED) -->
+        <h2>Where technology meets fashion</h2>                     <!-- Heading for the middle card 2 -->
+        <p>Many wearables look like gadgets. AstraSync products look like accessories: a slim ring, a refined steel watch, a light bracelet, comfortable earbuds.</p> <!-- Explains the design approach -->
+        <p>Minimal shapes and comfortable materials mean our devices suit the office, the gym and a night out, while the AstraSync app quietly turns your daily activity into useful insights.</p> <!-- Explains how design and technology combine -->
+      </section> 
+
+      <section class="card">                                        <!-- Card 3. Class selector used -> .card (ED) -->
+        <h2>About this website</h2>                                 <!-- Heading for card 3 -->
+        <p>Use the menu above to read our story on the About Us page, browse the AstraSync range on the Products page, or get in touch through the Contact Us page.</p> <!-- Brief description of the website and how to use it -->
+      </section> 
+
+    </div> 
+
+    <section id="range">                                             <!-- RANGE: quick links to every product. ID SELECTOR used here: #range -->
+      <h2 class="section-title">Meet the AstraSync range</h2>        <!-- Heading for the product tiles. CLASS SELECTOR used here: .section-title -->
+      <div class="range-grid">                                       <!-- Grid that holds the product tiles. CLASS SELECTOR used here: .range-grid -->
+        <a href="products.html" class="range-tile">                  <!-- Tile 1: opens the Products page -->
+          <img src="images/astraringgold.jpg" alt="AstraRing in Gold finish" loading="lazy">
+          <span>AstraRing</span>                                     <!-- Product name -->
+        </a>              
+        <a href="products.html" class="range-tile">                  <!-- Tile 2 -->
+          <img src="images/astrabeatsilver.jpg" alt="AstraBeat earpieces in Silver finish" loading="lazy">
+          <span>AstraBeat</span>                                     <!-- Product name -->
+        </a> 
+        <a href="products.html" class="range-tile">                  <!-- Tile 3 -->
+          <img src="images/astrawatchproblack.jpg" alt="AstraWatch Pro in Black finish" loading="lazy">
+          <span>AstraWatch Pro</span>                                <!-- Product name -->
+        </a> 
+        <a href="products.html" class="range-tile">                  <!-- Tile 4 -->
+          <img src="images/astrawatchsilver.jpg" alt="AstraWatch Classic in Silver finish" loading="lazy">
+          <span>AstraWatch Classic</span>                            <!-- Product name -->
+        </a> 
+        <a href="products.html" class="range-tile">                  <!-- Tile 5 -->
+          <img src="images/astrabandblack.jpg" alt="AstraBand in Black finish" loading="lazy">
+          <span>AstraBand</span>                                     <!-- Product name -->   
+        </a> 
+      </div> 
+    </section> 
+
+  </main>                                                            
+
+  <footer>                                                           <!-- FOOTER: bottom banner (same on every page) -->
+    <p>&copy; 2026 AstraSync. All rights reserved.</p>               <!-- Copyright line; &copy; shows the © symbol -->
+    <p>AstraSync is a fictional company created for a school project. Its products are not real medical or fitness devices.</p> <!-- Disclaimer that the company is fictional -->
+  </footer> 
+
+</body>
+</html> 

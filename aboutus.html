@@ -1,0 +1,105 @@
+<!DOCTYPE html> 
+<html lang="en"> 
+<head> 
+  <meta charset="UTF-8"> 
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"> 
+  <title>AstraSync | About Us</title>
+  <link rel="stylesheet" href="style.css"> 
+</head> 
+<body>
+
+  <header>                                                                           <!-- HEADER: top banner with logo, company name and tagline (same on every page) -->
+    <img src="images/astrasync-icon-large-transparent.png" alt="AstraSync logo" class="logo"> 
+    <div>                                                                            
+      <h1 class="company-name">AstraSync</h1>                                        
+      <p class="tagline">Sync that Styles, Live Smarter</p>                          
+    </div> 
+  </header> 
+
+  <nav>                                                                              
+    <a href="index.html">Home</a>                                                    <!-- Link to the Home page -->
+    <a href="aboutus.html" class="active">About Us</a>                               <!-- Link to the About Us page; class "active" highlights the current page -->
+    <a href="products.html">Products</a>                                             <!-- Link to the Products page -->
+    <a href="contactus.html">Contact Us</a>                                          <!-- Link to the Contact Us page -->
+  </nav> 
+
+  <section class="hero hero-small">                                                  <!-- HERO: shorter full-width banner. CLASS SELECTORS used here: .hero and .hero-small -->
+    <h2>About AstraSync</h2>                                                         <!-- Page heading -->
+    <p>We are a smart wearable technology company that believes health technology should look as good as it works.</p> <!-- Short introduction to the page -->
+  </section> 
+
+  <main> 
+
+    <section class="card">                                                           <!-- Story card. CLASS SELECTOR used here: .card -->
+      <h2>Our story</h2>                                                             <!-- Heading for the company story -->
+      <p>AstraSync began with a simple frustration. Our founders wore fitness trackers that gave them useful numbers, but the devices looked bulky and ended up in a drawer after a few weeks.</p> <!-- Why the company was founded (part 1) -->
+      <p>They asked a question: what if a health device looked like something you already love to wear? That question became AstraSync, a company that treats design and technology as equal partners.</p> <!-- Why the company was founded (part 2) -->
+      <p>Today every AstraSync device connects to the AstraSync app and cloud platform, turning daily activity into clear, personal insights.</p> <!-- How the products work together -->
+    </section> 
+
+    <div class="card-row">                                                           <!-- ROW: places the three cards side by side, same layout as the home page. CLASS SELECTOR used here: .card-row -->
+   
+      <section class="card">                                                         <!-- Mission card -->
+        <h2>Our mission</h2>                                                         <!-- Heading for the mission -->
+        <p>To create smart wearable devices that people enjoy wearing every day, combining comfortable design with meaningful health, fitness and lifestyle insights.</p> <!-- Mission statement -->
+      </section>
+
+      <section class="card">                                                         <!-- Vision card -->
+        <h2>Our vision</h2>                                                          <!-- Heading for the vision -->
+        <p>A world where technology fades into the background of daily life and helps everyone feel more confident, comfortable and in control of their wellbeing.</p> <!-- Vision statement -->
+      </section> 
+
+      <section class="card">                                                         <!-- Innovation card -->
+        <h2>Our commitment to innovation</h2>                                        <!-- Heading for innovation -->
+        <p>We keep improving how our devices sense, connect and fit. Each new product goes through comfort testing, battery testing and app testing before it reaches customers.</p> <!-- Commitment to innovation and quality -->
+      </section> 
+
+    </div> 
+
+    <section class="card" id="logo-meaning"> <!-- Logo explanation card. ID SELECTOR used here: #logo-meaning -->
+      <img src="images/astrasync-icon-large-transparent.png" alt="AstraSync logo" class="logo-large"> <!-- Large logo picture. CLASS SELECTOR used here: .logo-large -->
+      <div class="logo-text"> <!-- Text beside the logo. CLASS SELECTOR used here: .logo-text -->
+        <h2>Our logo</h2> <!-- Heading for the logo explanation -->
+        <p>The AstraSync logo is a bold letter A with a curved plum swoosh sweeping around it.</p> <!-- Describes what the logo looks like (edit this if you change the logo) -->
+        <p>The letter A stands for "Astra", the Latin word for stars, and its rising peak represents progress and performance. The swoosh stands for "Sync", the constant flow of data between your wearable, your phone and the cloud.</p> <!-- Explains the symbols and why they were chosen -->
+        <p>Black and deep plum were chosen because they feel premium, modern and calm, which matches our mix of technology and style.</p> <!-- Explains the colour choice -->
+      </div> <!-- End of the text group -->
+    </section> <!-- End of logo card -->
+
+    <section class="card"> <!-- Card for the management team table -->
+      <h2>Our key members</h2> <!-- Heading for the team table -->
+      <div class="table-wrap"> <!-- Wrapper that lets the table scroll sideways on small screens. CLASS SELECTOR used here: .table-wrap -->
+        <table id="team-table" class="info-table"> <!-- Team table. ID SELECTOR: #team-table. CLASS SELECTOR: .info-table (width set in style.css, at least 600px) -->
+          <tr> <!-- Header row of the table -->
+            <th>Position</th> <!-- Column heading: job title -->
+            <th>Name</th> <!-- Column heading: person's name -->
+            <th>Responsibilities</th> <!-- Column heading: what they do -->
+          </tr> <!-- End of header row -->
+          <tr> <!-- Row for the CEO -->
+            <td>Chief Executive Officer (CEO)</td> <!-- CEO job title -->
+            <td>Elara Voss</td> <!-- CEO name (fictional, you can change it) -->
+            <td>Sets the company vision, leads product direction and represents AstraSync to partners and customers.</td> <!-- CEO responsibilities -->
+          </tr> <!-- End of CEO row -->
+          <tr> <!-- Row for the COO -->
+            <td>Chief Operating Officer (COO)</td> <!-- COO job title -->
+            <td>Marcus Lee</td> <!-- COO name (fictional, you can change it) -->
+            <td>Runs daily operations, manufacturing, quality checks and delivery of AstraSync devices.</td> <!-- COO responsibilities -->
+          </tr> <!-- End of COO row -->
+          <tr> <!-- Row for the CFO -->
+            <td>Chief Financial Officer (CFO)</td> <!-- CFO job title -->
+            <td>Priya Nair</td> <!-- CFO name (fictional, you can change it) -->
+            <td>Manages budgets, financial planning and investment in new wearable technology.</td> <!-- CFO responsibilities -->
+          </tr> <!-- End of CFO row -->
+        </table> <!-- End of table -->
+      </div> <!-- End of the table wrapper -->
+    </section> <!-- End of team card -->
+
+  </main> 
+
+  <footer> 
+    <p>&copy; 2026 AstraSync. All rights reserved.</p>
+    <p>AstraSync is a fictional company created for a school project. Its products are not real medical or fitness devices.</p>
+  </footer> 
+
+</body> 
+</html> 
