@@ -1,0 +1,135 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<meta name="description" content="Explore AstraBeat wireless earpieces by AstraSync.">
+	<title>AstraSync | AstraBeat</title>
+	<link rel="stylesheet" href="../style.css">
+</head>
+<body>
+	<header>
+		<img src="../images/astrasync-icon-large-transparent.png" alt="AstraSync logo" class="logo">
+		<div>
+			<h1 class="company-name">AstraSync</h1>
+			<p class="tagline">Sync that Styles, Live Smarter</p>
+		</div>
+	</header>
+
+	<nav>
+		<a href="../index.html">Home</a>
+		<a href="../aboutus.html">About Us</a>
+		<a href="../products.html" class="active">Products</a>
+		<a href="../contactus.html">Contact Us</a>
+	</nav>
+
+	<main class="ring-page">
+		<div class="ring-breadcrumb" aria-label="Breadcrumb">
+			<a href="../index.html">Home</a>
+			<span aria-hidden="true">/</span>
+			<a href="../products.html">Products</a>
+			<span aria-hidden="true">/</span>
+			<span aria-current="page">AstraBeat</span>
+		</div>
+
+		<section class="ring-showcase" aria-labelledby="beat-title">
+			<div class="ring-visual">
+				<img class="product-detail-image" id="beat-image" src="../images/astrabeatsilver.jpg" alt="AstraBeat earpieces and charging case in Silver finish">
+				<p class="ring-visual-caption">ASTRABEAT <span>WIRELESS EARPIECES</span></p>
+			</div>
+
+			<div class="ring-details">
+				<p class="ring-kicker">ASTRASYNC / WIRELESS AUDIO</p>
+				<h2 id="beat-title">AstraBeat</h2>
+				<p class="ring-description">Wireless earpieces for athletes and everyday listening. Enjoy premium sound, a comfortable sports-ready fit, and AstraSync app support for settings and workouts.</p>
+
+				<fieldset class="ring-finish-picker">
+					<legend>Choose a finish <span id="selected-finish">Silver</span></legend>
+					<div class="ring-finish-options">
+						<label class="ring-finish-option">
+							<input type="radio" name="beat-finish" value="gold">
+							<span class="ring-swatch ring-swatch-gold" aria-hidden="true"></span>
+							<span>Gold</span>
+						</label>
+						<label class="ring-finish-option">
+							<input type="radio" name="beat-finish" value="silver" checked>
+							<span class="ring-swatch ring-swatch-silver" aria-hidden="true"></span>
+							<span>Silver</span>
+						</label>
+						<label class="ring-finish-option">
+							<input type="radio" name="beat-finish" value="black">
+							<span class="ring-swatch ring-swatch-black" aria-hidden="true"></span>
+							<span>Black</span>
+						</label>
+					</div>
+				</fieldset>
+
+				<div class="ring-availability">
+					<span class="availability-indicator" aria-hidden="true"></span>
+					<div>
+						<p>Availability</p>
+						<a id="availability-link" href="mailto:astrasyncofficial@gmail.com?subject=AstraBeat%20availability%20-%20Silver">Check Silver availability</a>
+					</div>
+				</div>
+
+				<a id="purchase-link" class="hero-btn premium-cta ring-buy-button" href="mailto:astrasyncofficial@gmail.com?subject=AstraBeat%20purchase%20enquiry%20-%20Silver">Enquire to buy</a>
+				<p class="ring-purchase-note">Email AstraSync to confirm availability and purchase details.</p>
+			</div>
+		</section>
+
+		<section class="ring-features" aria-labelledby="beat-features-title">
+			<div class="ring-section-heading">
+				<p class="ring-kicker">SOUND FOR EVERY DAY</p>
+				<h2 id="beat-features-title">Ready when you are</h2>
+			</div>
+			<ul class="ring-feature-list">
+				<li>Bluetooth wireless connectivity</li>
+				<li>Active noise cancellation</li>
+				<li>Ergonomic fitness design</li>
+				<li>Long battery life</li>
+				<li>Clear voice calls</li>
+				<li>Workout compatibility</li>
+				<li>Sweat resistance</li>
+				<li>Companion app integration</li>
+			</ul>
+		</section>
+	</main>
+
+	<footer>
+		<p>&copy; 2026 AstraSync. All rights reserved.</p>
+		<p>AstraSync is a fictional company created for a school project. Its products are not real medical or fitness devices.</p>
+	</footer>
+
+	<script>
+		const finishes = {
+			gold: { label: "Gold", dark: "#8B6A35", mid: "#C6A15B", light: "#F3DFAF" },
+			silver: { label: "Silver", dark: "#78838B", mid: "#C3CCD1", light: "#F7FAFB" },
+			black: { label: "Black", dark: "#101820", mid: "#303A42", light: "#7F8B92" }
+		};
+
+		const beatImage = document.querySelector("#beat-image");
+		const selectedFinish = document.querySelector("#selected-finish");
+		const availabilityLink = document.querySelector("#availability-link");
+		const purchaseLink = document.querySelector("#purchase-link");
+
+		document.querySelectorAll('input[name="beat-finish"]').forEach((option) => {
+			option.addEventListener("change", () => {
+				const finish = finishes[option.value];
+				const subjectFinish = encodeURIComponent(finish.label);
+
+				beatImage.src = `../images/astrabeat${option.value}.jpg`;
+				beatImage.alt = `AstraBeat earpieces and charging case in ${finish.label} finish`;
+				selectedFinish.textContent = finish.label;
+				availabilityLink.textContent = `Check ${finish.label} availability`;
+				availabilityLink.href = `mailto:astrasyncofficial@gmail.com?subject=AstraBeat%20availability%20-%20${subjectFinish}`;
+				purchaseLink.href = `mailto:astrasyncofficial@gmail.com?subject=AstraBeat%20purchase%20enquiry%20-%20${subjectFinish}`;
+			});
+		});
+
+		const initialFinish = document.querySelector('input[name="beat-finish"]:checked');
+		if (initialFinish) {
+			initialFinish.dispatchEvent(new Event("change"));
+		}
+	</script>
+</body>
+</html>

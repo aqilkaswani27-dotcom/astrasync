@@ -1,0 +1,133 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<meta name="description" content="Explore AstraWatch Classic, a refined digital lifestyle watch by AstraSync.">
+	<title>AstraSync | AstraWatch Classic</title>
+	<link rel="stylesheet" href="../style.css">
+</head>
+<body>
+	<header>
+		<img src="../images/astrasync-icon-large-transparent.png" alt="AstraSync logo" class="logo">
+		<div>
+			<h1 class="company-name">AstraSync</h1>
+			<p class="tagline">Sync that Styles, Live Smarter</p>
+		</div>
+	</header>
+
+	<nav>
+		<a href="../index.html">Home</a>
+		<a href="../aboutus.html">About Us</a>
+		<a href="../products.html" class="active">Products</a>
+		<a href="../contactus.html">Contact Us</a>
+	</nav>
+
+	<main class="ring-page">
+		<div class="ring-breadcrumb" aria-label="Breadcrumb">
+			<a href="../index.html">Home</a>
+			<span aria-hidden="true">/</span>
+			<a href="../products.html">Products</a>
+			<span aria-hidden="true">/</span>
+			<span aria-current="page">AstraWatch Classic</span>
+		</div>
+
+		<section class="ring-showcase" aria-labelledby="classic-title">
+			<div class="ring-visual classic-visual">
+				<img class="product-detail-image" id="classic-image" src="../images/astrawatchsilver.jpg" alt="AstraWatch Classic in Silver finish">
+				<p class="ring-visual-caption classic-visual-caption">ASTRAWATCH CLASSIC <span>RETRO DIGITAL</span></p>
+			</div>
+
+			<div class="ring-details">
+				<p class="ring-kicker">ASTRASYNC / LIFESTYLE WATCH</p>
+				<h2 id="classic-title">AstraWatch Classic</h2>
+				<p class="ring-description">A polished silver digital watch with a clean, familiar profile. It pairs an understated look for work and everyday wear with discreet connected features.</p>
+
+				<fieldset class="ring-finish-picker">
+					<legend>Choose a finish <span id="classic-selected-finish">Silver</span></legend>
+					<div class="ring-finish-options">
+						<label class="ring-finish-option">
+							<input type="radio" name="classic-finish" value="gold">
+							<span class="ring-swatch ring-swatch-gold" aria-hidden="true"></span>
+							<span>Gold</span>
+						</label>
+						<label class="ring-finish-option">
+							<input type="radio" name="classic-finish" value="silver" checked>
+							<span class="ring-swatch ring-swatch-silver" aria-hidden="true"></span>
+							<span>Silver</span>
+						</label>
+						<label class="ring-finish-option">
+							<input type="radio" name="classic-finish" value="black">
+							<span class="ring-swatch ring-swatch-black" aria-hidden="true"></span>
+							<span>Black</span>
+						</label>
+					</div>
+				</fieldset>
+
+				<div class="ring-availability">
+					<span class="availability-indicator" aria-hidden="true"></span>
+					<div>
+						<p>Availability</p>
+						<a id="classic-availability" href="mailto:astrasyncofficial@gmail.com?subject=AstraWatch%20Classic%20availability%20-%20Silver">Check Silver availability</a>
+					</div>
+				</div>
+
+				<a id="classic-purchase" class="hero-btn premium-cta ring-buy-button" href="mailto:astrasyncofficial@gmail.com?subject=AstraWatch%20Classic%20purchase%20enquiry%20-%20Silver">Enquire to buy</a>
+				<p class="ring-purchase-note">Email AstraSync to confirm availability and purchase details.</p>
+			</div>
+		</section>
+
+		<section class="ring-features" aria-labelledby="classic-features-title">
+			<div class="ring-section-heading">
+				<p class="ring-kicker">EVERYDAY ESSENTIALS</p>
+				<h2 id="classic-features-title">Classic form, connected life</h2>
+			</div>
+			<ul class="ring-feature-list">
+				<li>Health monitoring</li>
+				<li>Smart notifications</li>
+				<li>Activity tracking</li>
+				<li>Sleep tracking</li>
+				<li>Elegant watch faces</li>
+				<li>Smartphone connectivity</li>
+			</ul>
+		</section>
+	</main>
+
+	<footer>
+		<p>&copy; 2026 AstraSync. All rights reserved.</p>
+		<p>AstraSync is a fictional company created for a school project. Its products are not real medical or fitness devices.</p>
+	</footer>
+
+	<script>
+		const finishes = {
+			gold: { label: "Gold", dark: "#8B6A35", mid: "#C6A15B", light: "#F3DFAF" },
+			silver: { label: "Silver", dark: "#78838B", mid: "#C3CCD1", light: "#F7FAFB" },
+			black: { label: "Black", dark: "#101820", mid: "#303A42", light: "#7F8B92" }
+		};
+
+		const classicImage = document.querySelector("#classic-image");
+		const selectedFinish = document.querySelector("#classic-selected-finish");
+		const availabilityLink = document.querySelector("#classic-availability");
+		const purchaseLink = document.querySelector("#classic-purchase");
+
+		document.querySelectorAll('input[name="classic-finish"]').forEach((option) => {
+			option.addEventListener("change", () => {
+				const finish = finishes[option.value];
+				const subjectFinish = encodeURIComponent(finish.label);
+
+				classicImage.src = `../images/astrawatch${option.value}.jpg`;
+				classicImage.alt = `AstraWatch Classic in ${finish.label} finish`;
+				selectedFinish.textContent = finish.label;
+				availabilityLink.textContent = `Check ${finish.label} availability`;
+				availabilityLink.href = `mailto:astrasyncofficial@gmail.com?subject=AstraWatch%20Classic%20availability%20-%20${subjectFinish}`;
+				purchaseLink.href = `mailto:astrasyncofficial@gmail.com?subject=AstraWatch%20Classic%20purchase%20enquiry%20-%20${subjectFinish}`;
+			});
+		});
+
+		const initialFinish = document.querySelector('input[name="classic-finish"]:checked');
+		if (initialFinish) {
+			initialFinish.dispatchEvent(new Event("change"));
+		}
+	</script>
+</body>
+</html>

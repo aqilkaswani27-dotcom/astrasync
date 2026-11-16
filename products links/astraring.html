@@ -1,0 +1,133 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<meta name="description" content="Explore AstraRing, the minimalist smart ring by AstraSync.">
+	<title>AstraSync | AstraRing</title>
+	<link rel="stylesheet" href="../style.css">
+</head>
+<body>
+	<header>
+		<img src="../images/astrasync-icon-large-transparent.png" alt="AstraSync logo" class="logo">
+		<div>
+			<h1 class="company-name">AstraSync</h1>
+			<p class="tagline">Sync that Styles, Live Smarter</p>
+		</div>
+	</header>
+
+	<nav>
+		<a href="../index.html">Home</a>
+		<a href="../aboutus.html">About Us</a>
+		<a href="../products.html" class="active">Products</a>
+		<a href="../contactus.html">Contact Us</a>
+	</nav>
+
+	<main class="ring-page">
+		<div class="ring-breadcrumb" aria-label="Breadcrumb">
+			<a href="../index.html">Home</a>
+			<span aria-hidden="true">/</span>
+			<a href="../products.html">Products</a>
+			<span aria-hidden="true">/</span>
+			<span aria-current="page">AstraRing</span>
+		</div>
+
+		<section class="ring-showcase" aria-labelledby="ring-title">
+			<div class="ring-visual">
+				<img class="product-detail-image" id="ring-image" src="../images/astraringgold.jpg" alt="AstraRing in Gold finish">
+				<p class="ring-visual-caption">ASTRARING <span>SMART RING</span></p>
+			</div>
+
+			<div class="ring-details">
+				<p class="ring-kicker">ASTRASYNC / SMART RING</p>
+				<h2 id="ring-title">AstraRing</h2>
+				<p class="ring-description">A minimalist smart ring that tracks health and daily activity throughout the day, then syncs insights to your phone. Its refined design suits both casual and professional wear.</p>
+
+				<fieldset class="ring-finish-picker">
+					<legend>Choose a finish <span id="selected-finish">Gold</span></legend>
+					<div class="ring-finish-options">
+						<label class="ring-finish-option">
+							<input type="radio" name="ring-finish" value="gold" checked>
+							<span class="ring-swatch ring-swatch-gold" aria-hidden="true"></span>
+							<span>Gold</span>
+						</label>
+						<label class="ring-finish-option">
+							<input type="radio" name="ring-finish" value="silver">
+							<span class="ring-swatch ring-swatch-silver" aria-hidden="true"></span>
+							<span>Silver</span>
+						</label>
+						<label class="ring-finish-option">
+							<input type="radio" name="ring-finish" value="black">
+							<span class="ring-swatch ring-swatch-black" aria-hidden="true"></span>
+							<span>Black</span>
+						</label>
+					</div>
+				</fieldset>
+
+				<div class="ring-availability">
+					<span class="availability-indicator" aria-hidden="true"></span>
+					<div>
+						<p>Availability</p>
+						<a id="availability-link" href="mailto:astrasyncofficial@gmail.com?subject=AstraRing%20availability%20-%20Gold">Check Gold availability</a>
+					</div>
+				</div>
+
+				<a id="purchase-link" class="hero-btn premium-cta ring-buy-button" href="mailto:astrasyncofficial@gmail.com?subject=AstraRing%20purchase%20enquiry%20-%20Gold">Enquire to buy</a>
+				<p class="ring-purchase-note">Email AstraSync to confirm availability and purchase details.</p>
+			</div>
+		</section>
+
+		<section class="ring-features" aria-labelledby="ring-features-title">
+			<div class="ring-section-heading">
+				<p class="ring-kicker">EVERYDAY INSIGHT</p>
+				<h2 id="ring-features-title">Made to fit your day</h2>
+			</div>
+			<ul class="ring-feature-list">
+				<li>Heart rate monitoring</li>
+				<li>Sleep tracking</li>
+				<li>Daily activity and step counting</li>
+				<li>Stress monitoring</li>
+				<li>Smartphone connectivity</li>
+				<li>Real-time health insights</li>
+			</ul>
+		</section>
+	</main>
+
+	<footer>
+		<p>&copy; 2026 AstraSync. All rights reserved.</p>
+		<p>AstraSync is a fictional company created for a school project. Its products are not real medical or fitness devices.</p>
+	</footer>
+
+	<script>
+		const finishes = {
+			gold: { label: "Gold", dark: "#8B6A35", mid: "#C6A15B", light: "#F3DFAF" },
+			silver: { label: "Silver", dark: "#78838B", mid: "#C3CCD1", light: "#F7FAFB" },
+			black: { label: "Black", dark: "#101820", mid: "#303A42", light: "#7F8B92" }
+		};
+
+		const ringImage = document.querySelector("#ring-image");
+		const selectedFinish = document.querySelector("#selected-finish");
+		const availabilityLink = document.querySelector("#availability-link");
+		const purchaseLink = document.querySelector("#purchase-link");
+
+		document.querySelectorAll('input[name="ring-finish"]').forEach((option) => {
+			option.addEventListener("change", () => {
+				const finish = finishes[option.value];
+				const subjectFinish = encodeURIComponent(finish.label);
+
+				ringImage.src = `../images/astraring${option.value}.jpg`;
+				ringImage.alt = `AstraRing in ${finish.label} finish`;
+				selectedFinish.textContent = finish.label;
+				availabilityLink.textContent = `Check ${finish.label} availability`;
+				availabilityLink.href = `mailto:astrasyncofficial@gmail.com?subject=AstraRing%20availability%20-%20${subjectFinish}`;
+				purchaseLink.href = `mailto:astrasyncofficial@gmail.com?subject=AstraRing%20purchase%20enquiry%20-%20${subjectFinish}`;
+			});
+		});
+
+		const initialFinish = document.querySelector('input[name="ring-finish"]:checked');
+		if (initialFinish) {
+			initialFinish.dispatchEvent(new Event("change"));
+		}
+	</script>
+</body>
+</html>

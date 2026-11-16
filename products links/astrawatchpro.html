@@ -1,0 +1,135 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<meta name="description" content="Explore AstraWatch Pro, the performance smartwatch by AstraSync.">
+	<title>AstraSync | AstraWatch Pro</title>
+	<link rel="stylesheet" href="../style.css">
+</head>
+<body>
+	<header>
+		<img src="../images/astrasync-icon-large-transparent.png" alt="AstraSync logo" class="logo">
+		<div>
+			<h1 class="company-name">AstraSync</h1>
+			<p class="tagline">Sync that Styles, Live Smarter</p>
+		</div>
+	</header>
+
+	<nav>
+		<a href="../index.html">Home</a>
+		<a href="../aboutus.html">About Us</a>
+		<a href="../products.html" class="active">Products</a>
+		<a href="../contactus.html">Contact Us</a>
+	</nav>
+
+	<main class="ring-page">
+		<div class="ring-breadcrumb" aria-label="Breadcrumb">
+			<a href="../index.html">Home</a>
+			<span aria-hidden="true">/</span>
+			<a href="../products.html">Products</a>
+			<span aria-hidden="true">/</span>
+			<span aria-current="page">AstraWatch Pro</span>
+		</div>
+
+		<section class="ring-showcase" aria-labelledby="watch-title">
+			<div class="ring-visual watch-visual">
+				<img class="product-detail-image" id="watch-image" src="../images/astrawatchproblack.jpg" alt="AstraWatch Pro in Black finish">
+				<p class="ring-visual-caption watch-visual-caption">ASTRAWATCH PRO <span>SPORTS SMARTWATCH</span></p>
+			</div>
+
+			<div class="ring-details">
+				<p class="ring-kicker">ASTRASYNC / PERFORMANCE WATCH</p>
+				<h2 id="watch-title">AstraWatch Pro</h2>
+				<p class="ring-description">A performance smartwatch for athletes and active people. Track training in detail and sync sessions to the cloud to review progress across running, cycling, and gym workouts.</p>
+
+				<fieldset class="ring-finish-picker">
+					<legend>Choose a finish <span id="selected-finish">Black</span></legend>
+					<div class="ring-finish-options">
+						<label class="ring-finish-option">
+							<input type="radio" name="watch-finish" value="gold">
+							<span class="ring-swatch ring-swatch-gold" aria-hidden="true"></span>
+							<span>Gold</span>
+						</label>
+						<label class="ring-finish-option">
+							<input type="radio" name="watch-finish" value="silver">
+							<span class="ring-swatch ring-swatch-silver" aria-hidden="true"></span>
+							<span>Silver</span>
+						</label>
+						<label class="ring-finish-option">
+							<input type="radio" name="watch-finish" value="black" checked>
+							<span class="ring-swatch ring-swatch-black" aria-hidden="true"></span>
+							<span>Black</span>
+						</label>
+					</div>
+				</fieldset>
+
+				<div class="ring-availability">
+					<span class="availability-indicator" aria-hidden="true"></span>
+					<div>
+						<p>Availability</p>
+						<a id="availability-link" href="mailto:astrasyncofficial@gmail.com?subject=AstraWatch%20Pro%20availability%20-%20Black">Check Black availability</a>
+					</div>
+				</div>
+
+				<a id="purchase-link" class="hero-btn premium-cta ring-buy-button" href="mailto:astrasyncofficial@gmail.com?subject=AstraWatch%20Pro%20purchase%20enquiry%20-%20Black">Enquire to buy</a>
+				<p class="ring-purchase-note">Email AstraSync to confirm availability and purchase details.</p>
+			</div>
+		</section>
+
+		<section class="ring-features" aria-labelledby="watch-features-title">
+			<div class="ring-section-heading">
+				<p class="ring-kicker">TRAINING AT A GLANCE</p>
+				<h2 id="watch-features-title">Ready for your next session</h2>
+			</div>
+			<ul class="ring-feature-list">
+				<li>GPS tracking</li>
+				<li>Heart rate monitoring</li>
+				<li>Sleep analytics</li>
+				<li>Training metrics</li>
+				<li>Running statistics</li>
+				<li>Workout tracking</li>
+				<li>Smart notifications</li>
+				<li>Activity monitoring</li>
+			</ul>
+		</section>
+	</main>
+
+	<footer>
+		<p>&copy; 2026 AstraSync. All rights reserved.</p>
+		<p>AstraSync is a fictional company created for a school project. Its products are not real medical or fitness devices.</p>
+	</footer>
+
+	<script>
+		const finishes = {
+			gold: { label: "Gold", dark: "#8B6A35", mid: "#C6A15B", light: "#F3DFAF" },
+		silver: { label: "Silver", dark: "#78838B", mid: "#C3CCD1", light: "#F7FAFB" },
+		black: { label: "Black", dark: "#101820", mid: "#303A42", light: "#7F8B92" }
+		};
+
+		const watchImage = document.querySelector("#watch-image");
+		const selectedFinish = document.querySelector("#selected-finish");
+		const availabilityLink = document.querySelector("#availability-link");
+		const purchaseLink = document.querySelector("#purchase-link");
+
+		document.querySelectorAll('input[name="watch-finish"]').forEach((option) => {
+			option.addEventListener("change", () => {
+				const finish = finishes[option.value];
+				const subjectFinish = encodeURIComponent(finish.label);
+
+				watchImage.src = `../images/astrawatchpro${option.value}.jpg`;
+				watchImage.alt = `AstraWatch Pro in ${finish.label} finish`;
+				selectedFinish.textContent = finish.label;
+				availabilityLink.textContent = `Check ${finish.label} availability`;
+				availabilityLink.href = `mailto:astrasyncofficial@gmail.com?subject=AstraWatch%20Pro%20availability%20-%20${subjectFinish}`;
+				purchaseLink.href = `mailto:astrasyncofficial@gmail.com?subject=AstraWatch%20Pro%20purchase%20enquiry%20-%20${subjectFinish}`;
+			});
+		});
+
+		const initialFinish = document.querySelector('input[name="watch-finish"]:checked');
+		if (initialFinish) {
+			initialFinish.dispatchEvent(new Event("change"));
+		}
+	</script>
+</body>
+</html>
